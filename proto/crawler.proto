@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service Crawler {
+  rpc FetchPage (URLRequest) returns (PageResponse);
+}
+
+message URLRequest {
+  string url = 1;
+}
+
+message PageResponse {
+  repeated string titles = 1;
+  repeated string links = 2;
+}
